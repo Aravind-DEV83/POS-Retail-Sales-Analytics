@@ -46,20 +46,22 @@ The Fact table store data at transaction level for each item, each row represent
     | Loyality Points earned              | Points earned for each time                                     |
 
 
-#### Dimensional Model
+### Dimensional Model
 
 ![Dimensional Model](<images/POS Sales DIM Model.png>)
 
 ##### Dimension Table Surrogate Keys
 
-⋅⋅* The unique primary key of a dimension table should be a surrogate key rather than relying on the operational system identifier, known as the natural key.
+* The unique primary key of a dimension table should be a surrogate key rather than relying on the operational system identifier, known as the natural key.
 
-⋅⋅* We are going to use **GENERATE_UUID()** function in bigquery to generate globally Unique identifiers, it eliminates the risk of key collisions.
+* We are going to use **GENERATE_UUID()** function in bigquery to generate globally Unique identifiers, it eliminates the risk of key collisions.
 
 As a fundamental thing to consider from kimball DW Tool kit,
-``` Every join between dimension and fact tables in the data warehouse
+``` 
+Every join between dimension and fact tables in the data warehouse
 should be based on meaningless integer surrogate keys. You should avoid using a
-natural key as the dimension table’s primary key. ```
+natural key as the dimension table’s primary key. 
+```
 
 ##### Fact Table Surrogate Keys
 
